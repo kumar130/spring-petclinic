@@ -1,3 +1,5 @@
-FROM tomcat:9-jre11-slim
+FROM java:openjdk-8-jdk-alpine
 
-ADD target/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar /usr/local/tomcat/webapps/
+ADD target/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar .
+
+RUN java -jar spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar
